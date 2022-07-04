@@ -1,0 +1,9 @@
+{% block content %}
+
+    {% for post in posts %}
+        <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+        <p>{{ post.lead }}</p>
+        <br>
+    {% endfor %}
+
+{% endblock %}
