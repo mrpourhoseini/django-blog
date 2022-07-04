@@ -24,7 +24,7 @@ environ.Env.read_env(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zg&+w^0spe=zy9-x%@3+c8^nzib#4s(3jr=t6f2fqm8-2%gs^5'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
@@ -82,8 +82,8 @@ DATABASES = {
         'NAME': env('DATABASE_NAME'),
         'USER': env('DATABASE_USER'),
         'PASSWORD': env('DATABASE_PASS'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT')
     }
 }
 
