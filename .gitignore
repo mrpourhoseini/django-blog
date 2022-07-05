@@ -140,4 +140,4 @@ cython_debug/
 
 .idea
 /node_modules/
-/theme/static_src/node_modules/
+/theme/node_modules/
