@@ -141,3 +141,4 @@ cython_debug/
 .idea
 /node_modules/
 /theme/node_modules/
+/theme/media/posts/

@@ -25,12 +25,13 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     lead = models.TextField(null=True, blank=True, verbose_name="lead")
     body = models.TextField(verbose_name="body")
+    thumbnail = models.ImageField(verbose_name="thumbnail", null=True, upload_to='posts')
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     featured = models.BooleanField(default=False, verbose_name="featured")
 
     created = models.DateTimeField(auto_now_add=True, verbose_name="created")
     updated = models.DateTimeField(auto_now=True, verbose_name="created")
-    status = models.CharField(max_length=15, choices=StatusChoices.choices, default=StatusChoices.DRAFT,
+    status = models.CharField(max_length=130, choices=StatusChoices.choices, default=StatusChoices.DRAFT,
                               verbose_name="status")
     publish_time = models.DateTimeField(verbose_name="publish time")
 
