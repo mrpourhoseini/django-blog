@@ -3,6 +3,7 @@
 
     {% for post in posts %}
         <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+        <small>{{ post.publish_time|date:"M d, Y" }}</small>
         <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
         <p>{{ post.lead }}</p>
         <br>

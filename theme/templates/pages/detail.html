@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <h2>{{ post.title }}</h2>
+    <small>{{ post.publish_time|date:"M d, Y" }}</small>
+    <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
     <p>{{ post.body }}</p>
 {% endblock %}
