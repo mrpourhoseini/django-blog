@@ -2,32 +2,13 @@
 
 {% block content %}
 
-
-{#        <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>#}
-{#        <small>{{ post.publish_time|date:"M d, Y" }}</small>#}
-{#        <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">#}
-{#        <p>{{ post.lead }}</p>#}
-{#        <br>#}
-
-
-<section class="container px-6 py-4 mx-auto">
-    <div class="grid gap-6 mb-8 md:grid-cols-1 lg:grid-cols-2">
-    <!--Post Card Items -->
-        {% for post in posts %}
-            <div class="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
-                <img alt="{{ post.title }}" class="w-30 rounded-md border-2 border-gray-300" src="{{ post.thumbnail.url }}" />
-                 <div id="body" class="flex flex-col ml-5">
-                    <h4 id="name" class="text-xl text-blue-500 mb-2">{{ post.title }}</h4>
-                    <p id="job" class="text-gray-800 mt-2">{{ post.lead }}</p>
-{#                    <div class="flex mt-5">#}
-{#                       <img alt="avatar" class="w-6 rounded-full border-2 border-gray-300" src="https://picsum.photos/seed/picsum/200" />#}
-{#                       <p class="ml-3">John Doe</p>#}
-{#                    </div>#}
-                 </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
+    {% for post in posts %}
+        <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+        <small>{{ post.publish_time|date:"M d, Y" }}</small>
+        <img src="{{ post.thumbnail.url }}" alt="{{ post.title }}">
+        <p>{{ post.lead }}</p>
+        <br>
+    {% endfor %}
 
 
 {% endblock %}
